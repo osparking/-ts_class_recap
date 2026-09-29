@@ -8,7 +8,13 @@ class Player {
   taunt() {
     console.log("짠짜라라...");
   }
+  looseLife() {
+    this.numlives--;
+  }
 }
 
 const playerSon = new Player("흥민", "손");
-console.log("축구선수: ", playerSon);
+console.log("축구선수: ", playerSon.numlives);
+playerSon.looseLife();
+console.log("축구선수: ", playerSon.numlives);
+
