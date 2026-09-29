@@ -1,4 +1,8 @@
-class Player{}
+class Player {
+  taunt() {
+    console.log("짠짜라라...");
+  }
+}
 
 const playerSon = new Player();
-console.log(playerSon);
+playerSon.taunt();
