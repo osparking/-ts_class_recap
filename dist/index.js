@@ -51,6 +51,12 @@ class Player {
   }
 }
 
+class AdminPlayer extends Player {
+    isAdmin = true;
+}
+
+const admin = new AdminPlayer();
+
 const playerSon = new Player("흥민", "손");
 playerSon.looseLife();
 playerSon.updateScore(28);
