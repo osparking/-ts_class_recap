@@ -11,6 +11,14 @@ class Player {
   get score() {
     return this.#score;
   }
+
+  set score(newScore) {
+    if (newScore < 0) {
+        throw new Error("스코어는 음수일 수 없습니다.");
+    }
+    this.#score = newScore;
+  }
+
   get fullName() {
     return `${this.last} ${this.firstname}`;
   }
@@ -38,5 +46,6 @@ class Player {
 const playerSon = new Player("흥민", "손");
 playerSon.looseLife();
 playerSon.updateScore(28)
+playerSon.score = 100;
 console.log(`${playerSon.fullName} 성적: `, playerSon.score);
 
