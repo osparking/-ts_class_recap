@@ -1,9 +1,12 @@
 class Player {
-  score = 0;
+  #score = 0;
   numlives = 10;
   constructor(firstname, lastname) {
     this.firstname = firstname;
     this.last = lastname;
+  }
+  getScore() {
+    return this.#score;
   }
   taunt() {
     console.log("짠짜라라...");
@@ -14,7 +17,6 @@ class Player {
 }
 
 const playerSon = new Player("흥민", "손");
-console.log("축구선수: ", playerSon.numlives);
 playerSon.looseLife();
-console.log("축구선수: ", playerSon.numlives);
+console.log("흥민 성적: ", playerSon.getScore());
 
