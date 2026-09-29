@@ -6,3 +6,6 @@ class Player {
 
 const playerSon = new Player();
 playerSon.taunt();
+
+const playerHodo = new Player();
+playerHodo.taunt();
