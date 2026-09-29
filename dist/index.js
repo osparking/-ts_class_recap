@@ -52,10 +52,14 @@ class Player {
 }
 
 class AdminPlayer extends Player {
-    isAdmin = true;
+  constructor(firstname, last, powers) {
+    super(firstname, last);
+    this.powers = powers;
+  }
+  isAdmin = true;
 }
 
-const admin = new AdminPlayer();
+const admin = new AdminPlayer("명보", "홍", ["선수 교체", "심판 항의"]);
 
 const playerSon = new Player("흥민", "손");
 playerSon.looseLife();
