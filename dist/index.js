@@ -1,4 +1,6 @@
 class Player {
+    // get score, get fullName
+
   #score = 0;
   #numlives = 10;
   constructor(firstname, lastname) {
@@ -6,9 +8,13 @@ class Player {
     this.last = lastname;
   }
   #secret = "ajskfj$kfvj";
-  getScore() {
+  get score() {
     return this.#score;
   }
+  get fullName() {
+    return `${this.last} ${this.firstname}`;
+  }
+
   updateScore(newScore) {
     this.#score = newScore
   }
@@ -32,5 +38,5 @@ class Player {
 const playerSon = new Player("흥민", "손");
 playerSon.looseLife();
 playerSon.updateScore(28)
-console.log("흥민 성적: ", playerSon.checkSecret("ajskfj$kfvj"));
+console.log(`${playerSon.fullName} 성적: `, playerSon.score);
 
