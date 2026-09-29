@@ -1,4 +1,6 @@
 class Player {
+  score = 0;
+  numlives = 10;
   constructor(firstname, lastname) {
     this.firstname = firstname;
     this.last = lastname;
@@ -9,9 +11,4 @@ class Player {
 }
 
 const playerSon = new Player("흥민", "손");
-console.log("축구선수: ", playerSon.last, playerSon.firstname);
-
-playerSon.taunt();
-
-const playerHodo = new Player("크리스", "호날두");
-playerHodo.taunt();
+console.log("축구선수: ", playerSon);
