@@ -23,6 +23,12 @@ class Player {
     return `${this.last} ${this.firstname}`;
   }
 
+  set fullName(newName) {
+    const [lastname, firstname ] = newName.split(" ");
+    this.firstname = firstname;
+    this.last = lastname;
+  }
+
   updateScore(newScore) {
     this.#score = newScore
   }
@@ -48,4 +54,5 @@ playerSon.looseLife();
 playerSon.updateScore(28)
 playerSon.score = 100;
 console.log(`${playerSon.fullName} 성적: `, playerSon.score);
+playerSon.fullName = "남궁 옥분";
 
