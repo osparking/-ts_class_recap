@@ -1,7 +1,7 @@
 class Player {
-    readonly lastname: string;
-    readonly firstname: string;
-    score: number = 0; // score = 0; // 이것도 가능 형 유추 기능
+    public readonly lastname: string;
+    public readonly firstname: string;
+    public score: number = 0; // score = 0; // 이것도 가능 형 유추 기능
 
     constructor(lastname: string, firstname: string) {
         this.lastname = lastname;
