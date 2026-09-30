@@ -14,6 +14,9 @@ class Player {
         return this._age;
     }
     set age(age) {
+        if (age < 0) {
+            throw new Error("나이는 음수가 불가능합니다.");
+        }
         this._age = age;
     }
     printPlayernumber() {
