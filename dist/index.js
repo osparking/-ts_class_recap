@@ -4,7 +4,21 @@ class Player {
         this.score = 0; // score = 0; // 이것도 가능 형 유추 기능
         this.lastname = lastname;
         this.firstname = firstname;
+        this.fullname = this.lastname + " " + this.firstname;
+        Player.numPlayers++;
+        this.printPlayernumber();
+    }
+    setScore(score) {
+        this.score = score;
+    }
+    printPlayernumber() {
+        console.log("등록 선수 인원: ", Player.numPlayers);
+    }
+    getFullname() {
+        return this.fullname;
     }
 }
+Player.numPlayers = 0;
 const myDog = new Player("성박", "구름이");
-myDog.score = 98;
+myDog.setScore(98);
+console.log("이름: ", myDog.getFullname());
