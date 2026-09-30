@@ -1,69 +1,10 @@
+"use strict";
 class Player {
-  static description = "이 게임의 참가자";
-  static randomPlayer = () => {
-    return new Player("기석", "장");
-  };
-  #score = 0;
-  #numlives = 10;
-  constructor(firstname, lastname) {
-    this.firstname = firstname;
-    this.last = lastname;
-  }
-  #secret = "ajskfj$kfvj";
-  get score() {
-    return this.#score;
-  }
-
-  set score(newScore) {
-    if (newScore < 0) {
-      throw new Error("스코어는 음수일 수 없습니다.");
+    constructor(lastname, firstname) {
+        this.score = 0; // score = 0; // 이것도 가능 형 유추 기능
+        this.lastname = lastname;
+        this.firstname = firstname;
     }
-    this.#score = newScore;
-  }
-
-  get fullName() {
-    return `${this.last} ${this.firstname}`;
-  }
-
-  set fullName(newName) {
-    const [lastname, firstname] = newName.split(" ");
-    this.firstname = firstname;
-    this.last = lastname;
-  }
-
-  updateScore(newScore) {
-    this.#score = newScore;
-  }
-  taunt() {
-    console.log("짠짜라라...");
-  }
-  looseLife() {
-    this.#numlives--;
-  }
-  #setSecret() {
-    this.#secret = "askkfjn@#$12rjf";
-  }
-  checkSecret(password) {
-    if (this.#secret === password) {
-      return true;
-    }
-    return false;
-  }
 }
-
-class AdminPlayer extends Player {
-  constructor(firstname, last, powers) {
-    super(firstname, last);
-    this.powers = powers;
-  }
-  isAdmin = true;
-}
-
-const admin = new AdminPlayer("명보", "홍", ["선수 교체", "심판 항의"]);
-
-const playerSon = new Player("흥민", "손");
-playerSon.looseLife();
-playerSon.updateScore(28);
-playerSon.score = 100;
-console.log(`${playerSon.fullName} 성적: `, playerSon.score);
-playerSon.fullName = "남궁 옥분";
+const myDog = new Player("성박", "구름이");
+myDog.score = 98;
