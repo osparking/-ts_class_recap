@@ -4,7 +4,7 @@ class Player {
   constructor(
     public lastname: string,
     public firstname: string,
-    private age: number,
+    private _age: number,
   ) {
     Player.numPlayers++;
     this.printPlayernumber();
@@ -14,13 +14,20 @@ class Player {
     return `${this.lastname} ${this.firstname}`;
   }
 
-  public setScore(score: number) {
-    this.age = score;
+  get age() {
+    return this._age;
   }
+
+  set age(age: number) {
+    this._age = age;
+  }
+
   private printPlayernumber() {
     console.log("등록 선수 인원: ", Player.numPlayers);
   }
 }
 
 const myDog = new Player("성박", "구름이", 5);
-console.log("이름: ", myDog.fullname);
+console.log("나이: ", myDog.age);
+myDog.age = 6;
+console.log("나이: ", myDog.age);

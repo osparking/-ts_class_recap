@@ -1,17 +1,20 @@
 "use strict";
 class Player {
-    constructor(lastname, firstname, age) {
+    constructor(lastname, firstname, _age) {
         this.lastname = lastname;
         this.firstname = firstname;
-        this.age = age;
+        this._age = _age;
         Player.numPlayers++;
         this.printPlayernumber();
     }
     get fullname() {
         return `${this.lastname} ${this.firstname}`;
     }
-    setScore(score) {
-        this.age = score;
+    get age() {
+        return this._age;
+    }
+    set age(age) {
+        this._age = age;
     }
     printPlayernumber() {
         console.log("등록 선수 인원: ", Player.numPlayers);
@@ -19,4 +22,6 @@ class Player {
 }
 Player.numPlayers = 0;
 const myDog = new Player("성박", "구름이", 5);
-console.log("이름: ", myDog.fullname);
+console.log("나이: ", myDog.age);
+myDog.age = 6;
+console.log("나이: ", myDog.age);
