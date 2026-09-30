@@ -7,6 +7,9 @@ class Player {
         Player.numPlayers++;
         this.printPlayernumber();
     }
+    get fullname() {
+        return `${this.lastname} ${this.firstname}`;
+    }
     setScore(score) {
         this.age = score;
     }
@@ -16,4 +19,4 @@ class Player {
 }
 Player.numPlayers = 0;
 const myDog = new Player("성박", "구름이", 5);
-console.log("이름: ", myDog.firstname);
+console.log("이름: ", myDog.fullname);
