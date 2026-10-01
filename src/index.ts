@@ -1,15 +1,10 @@
-
-function getRandomItem<T>(list: T[]): T {
-  const randomIndex = Math.floor(Math.random() * list.length);
-  return list[randomIndex];
+function merge<T, U>(obj1: T, obj2: U): T & U {
+  return { ...obj1, ...obj2 };
 }
 
-const getRandomItem3 = <T>(list: T[]): T => { // T 다음 콤마 필수
-  const randomIndex = Math.floor(Math.random() * list.length);
-  return list[randomIndex];
-};
+console.log(
+  merge<{ name: string }, { age: number }>({ name: "범박" }, { age: 30 }),
+);
 
-console.log(getRandomItem2([12, 22, 32]));
-console.log(getRandomItem([1, 2, 3]));
-console.log(getRandomItem(["행복", "노력", "성공"]));
-console.log(getRandomItem([true, false]));
+// 타입 추론(Type Inference)으로 인해 제네릭 타입을 생략 가능
+console.log(merge({ name: "범박" }, { age: 30 }));
