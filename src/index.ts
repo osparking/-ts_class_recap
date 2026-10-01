@@ -10,11 +10,11 @@ function booleanIdentity(bool: boolean): boolean {
   return bool;
 }
 
-function identity(arg: any): any {
+function identitySloppy(arg: any): any {
   return arg;
 }
 
-function identityGeneric<Type>(argument: Type): Type {
+function identity<T>(argument: T): T {
   return argument;
 }
 
@@ -24,7 +24,7 @@ type Doggie = {
   breed: string;
 };
 
-console.log("1", identityGeneric<number>(1));
+console.log("1", identity<number>(1));
 console.log("우리 개",
-  identityGeneric<Doggie>({ name: "구름이", age: 5, breed: "보더믹스" }),
+  identity<Doggie>({ name: "구름이", age: 5, breed: "보더믹스" }),
 );
