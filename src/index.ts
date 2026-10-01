@@ -7,4 +7,4 @@ console.log(
 );
 
 // 타입 추론(Type Inference)으로 인해 제네릭 타입을 생략 가능
-console.log(merge({ name: "범박" }, { age: 30 }));
+console.log(merge({ name: "범박" }, 30));
