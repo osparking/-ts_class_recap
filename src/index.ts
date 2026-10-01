@@ -17,3 +17,5 @@ function identity(arg: any): any {
 function identityGeneric<Type>(argument: Type): Type {
     return argument;
 }
+
+identityGeneric<number>
