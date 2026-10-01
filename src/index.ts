@@ -70,5 +70,13 @@ class ParttimeEmployee extends Employee {
   }
 }
 
-const myself = new ParttimeEmployee("범", "박", 10000)
+const myself = new ParttimeEmployee("범", "박", 10000);
 myself.workhour = 120;
+
+const usernameInput = document.querySelector("#username");
+console.log(usernameInput);
+console.dir(usernameInput);
+// usernameInput.value = ""; // error
+const usernameInputGeneric =
+  document.querySelector<HTMLInputElement>("#username")!;
+usernameInputGeneric.value = "but_tiger";
