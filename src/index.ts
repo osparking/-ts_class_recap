@@ -1,18 +1,18 @@
-interface Trip {
-    length: number;
+interface Video {
+    title: string;
+    artist: string;
+    resolution: string;
 }
 
-function roundTripDistance<T extends Trip>(oneWayTrip: T): number {
-    return oneWayTrip.length * 2;
+interface Audio {
+    title: string;
+    artist: string;
 }
 
-console.log(roundTripDistance({ length: 100 })); // 200
-console.log(roundTripDistance("난관지연")); // 200
-
-function makeEmptyArray<T = number>(): T[] {
-    return [];
+class VideoPlayList {
+  public videos: Video[] = [];
 }
 
-const scores = makeEmptyArray(); // number[]
-scores.push(85);
-scores.push(92);
+class AudioPlayList {
+  public audios: Audio[] = [];
+}
