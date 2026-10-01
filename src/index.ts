@@ -80,3 +80,12 @@ console.dir(usernameInput);
 const usernameInputGeneric =
   document.querySelector<HTMLInputElement>("#username")!;
 usernameInputGeneric.value = "but_tiger";
+
+const buttonGeneric = document.querySelector<HTMLButtonElement>(".btn")!;
+buttonGeneric.addEventListener("click", () => {
+  buttonGeneric.disabled = true;
+});
+
+usernameInputGeneric.addEventListener("input", (event) => {
+  buttonGeneric.disabled = false;
+});
