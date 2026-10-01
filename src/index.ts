@@ -13,5 +13,5 @@ function makeEmptyArray<T>(): T[] {
     return [];
 }
 
-const messages = makeEmptyArray<string>(); // string[]
+const messages = makeEmptyArray(); // string[]
 messages.push("안녕?");
