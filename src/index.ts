@@ -13,3 +13,7 @@ function booleanIdentity(bool: boolean): boolean {
 function identity(arg: any): any {
     return arg;
 }
+
+function identityGeneric<Type>(argument: Type): Type {
+    return argument;
+}
