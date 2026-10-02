@@ -8,7 +8,7 @@ interface Dog {
   breed: string;
 }
 
-function isCat(pet: Cat | Dog) {
+function isCat(pet: Cat | Dog): pet is Cat {
   return (pet as Cat).numLives !== undefined;
 }
 
