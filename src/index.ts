@@ -1,4 +1,6 @@
 function triple(arg: number | string) {
-  // console.log(arg * 3);
-  // console.log(arg.repeat(3));
+  if (typeof arg === 'number') {
+    return arg * 3;
+  }
+  return arg.repeat(3);
 }
