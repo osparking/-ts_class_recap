@@ -1,26 +1,16 @@
-interface Movid {
-  title: string;
-  runtime: number;
-}
+const DATE_FORMAT_OPTIONS: Intl.DateTimeFormatOptions = {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+} as const;
 
-interface TvShow {
-  title: string;
-  numberOfEpisodes: number;
-  episodeRuntime: number;
-}
+const LOCALE = 'ko-KR';
 
-const getTotalRuntime = (media: Movid | TvShow): number => {
-  if ("runtime" in media) {
-    return media.runtime;
-  }
-  return media.numberOfEpisodes * media.episodeRuntime;
+const formatDate = (date: Date): string => {
+  return date.toLocaleDateString(LOCALE, DATE_FORMAT_OPTIONS);
 };
 
-console.log(getTotalRuntime({ title: "암살자들", runtime: 131 })); // Output: 148
-console.log(
-  getTotalRuntime({
-    title: "가을동화",
-    numberOfEpisodes: 16,
-    episodeRuntime: 52,
-  }),
-); // Output: 2914
+const printFullDate = (date: string | Date): string => {
+  const dateObj = date instanceof Date ? date : new Date(date);
+  return formatDate(dateObj);
+};
