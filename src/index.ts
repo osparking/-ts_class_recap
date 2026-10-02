@@ -1,21 +1,43 @@
-interface Cat {
-  name: string;
-  numLives: number;
+// discriminated union types
+// interface Cow, Pig, Rooster 
+// getFarmAnimalSound(animal: FarmAnimal): string {
+// name, age, weight, type, 
+// type FarmAnimal 
+
+interface Cow {
+    type: "cow";
+    name: string;
+    age: number;
+    weight: number;
 }
 
-interface Dog {
-  name: string;
-  breed: string;
+interface Pig {
+    type: "pig";
+    name: string;
+    age: number;
+    weight: number;
 }
 
-function isCat(pet: Cat | Dog): pet is Cat {
-  return (pet as Cat).numLives !== undefined;
+interface Rooster {
+    type: "rooster";
+    name: string;
+    age: number;
+    weight: number;
 }
 
-function makeNoise(pet: Cat | Dog): string {
-  if (isCat(pet)) {
-    return `${pet.name} says Meow!`;
-  } else {
-    return `${pet.name} says Woof!`;
-  }
+type FarmAnimal = Cow | Pig | Rooster;
+
+function getFarmAnimalSound(animal: FarmAnimal): string {
+    switch (animal.type) {
+        case "cow":
+            return `${animal.name} 음매`;
+        case "pig":
+            return `${animal.name} 꿀꿀`;
+        case "rooster":
+            return `${animal.name} 꼬끼요`;
+    }
 }
+
+console.log(getFarmAnimalSound({ type: "cow", name: "음마이", age: 5, weight: 1500 }));
+console.log(getFarmAnimalSound({ type: "pig", name: "뚱이", age: 3, weight: 800 }));
+console.log(getFarmAnimalSound({ type: "rooster", name: "꼬꼬", age: 2, weight: 5 }));
